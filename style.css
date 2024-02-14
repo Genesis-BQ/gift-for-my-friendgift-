@@ -1,0 +1,99 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    background: linear-gradient(to bottom, #000, #ada5a5);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.titulo {
+    font-family: 'Harrington', cursive;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    font-size: 46px; /* Ajusta el tamaño según tu preferencia */
+    color: white;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.enviar {
+    margin-top: 100px; /* Espaciado desde el h1 */
+    padding: 15px 30px; /* Ajustado para más espacio */
+    font-size: 20px; /* Ajustado el tamaño del texto */
+    font-weight: bold;
+    color: white;
+    background: #bd7b91;
+    border: none;
+    cursor: pointer;
+    font-family: 'Harrington';
+    border-radius: 8px; /* Ajustado el radio de borde */
+    transition: 0.5s all;
+}
+
+#playPauseBtn {
+    background-color:#bd7b91; 
+    color: #fff; 
+    padding: 10px 20px; 
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    position: absolute;
+    top: 94%; /* Ajusta la posición vertical*/
+    left: 50%; /* Ajusta la posición horizontal*/
+    transform: translate(-50%, -50%);
+}
+span{
+    position: absolute;
+    pointer-events: none;
+    filter: drop-shadow(0 0 15px rgba(0,0,0,0.5));
+    animation: fadeInOut 1s linear infinite;
+}
+
+@keyframes fadeInOut{
+    0%,100%{
+        opacity: 0;
+    }
+    20%,80%{
+        opacity: 1;
+    }
+}
+
+span::before{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: url(heart.png);
+    background-size: cover;
+    animation: moveShape 1s linear infinite;
+}
+
+@keyframes moveShape{
+    0%{
+        transform: translate(0) rotate(0deg);
+    }
+    100%{
+        transform: translate(300px) rotate(350deg);
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .titulo {
+        font-size: 22px; /* Ajustado el tamaño del título para dispositivos móviles */
+    }
+
+    #playPauseBtn {
+        top: 90%; /* Ajusta la posición vertical para dispositivos móviles */
+    }
+    
+}
